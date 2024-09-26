@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace ConsoleDrawer
+﻿namespace ConsoleDrawer
 {
     internal class Program
     {
@@ -14,7 +12,6 @@ namespace ConsoleDrawer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
         static void Main(string[] args)
         {
-            //█▓▒░
             ConsoleKeyInfo info;
             do
             {
@@ -30,9 +27,7 @@ namespace ConsoleDrawer
                     case ConsoleKey.F3: symbol = '▒'; break;
                     case ConsoleKey.F4: symbol = '░'; break;
                     case ConsoleKey.Spacebar:
-                        var cursorPosition = Console.GetCursorPosition();
-                        Console.Write(symbol);
-                        Console.SetCursorPosition(cursorPosition.Left, cursorPosition.Top);
+                        DrawSymbol();
                         break;
                     case ConsoleKey.D0:
                     case ConsoleKey.NumPad0:
@@ -74,6 +69,8 @@ namespace ConsoleDrawer
                             case ConsoleColor.DarkMagenta: Console.ForegroundColor = ConsoleColor.Magenta; break;
                             case ConsoleColor.DarkYellow: Console.ForegroundColor = ConsoleColor.Yellow; break;
                             case ConsoleColor.DarkGray: Console.ForegroundColor = ConsoleColor.Gray; break;
+                            case ConsoleColor.Black: Console.ForegroundColor = ConsoleColor.DarkGray; break;
+                            case ConsoleColor.Gray: Console.ForegroundColor = ConsoleColor.White; break;
                         }
                         break;
                     case ConsoleKey.Subtract:
@@ -86,6 +83,8 @@ namespace ConsoleDrawer
                             case ConsoleColor.Magenta: Console.ForegroundColor = ConsoleColor.DarkMagenta; break;
                             case ConsoleColor.Yellow: Console.ForegroundColor = ConsoleColor.DarkYellow; break;
                             case ConsoleColor.Gray: Console.ForegroundColor = ConsoleColor.DarkGray; break;
+                            case ConsoleColor.White: Console.ForegroundColor = ConsoleColor.Gray; break;
+                            case ConsoleColor.DarkGray: Console.ForegroundColor = ConsoleColor.Black; break;
                         }
                         break;
                     case ConsoleKey.Delete:
